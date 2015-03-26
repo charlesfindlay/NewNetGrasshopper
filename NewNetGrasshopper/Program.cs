@@ -10,34 +10,9 @@ namespace NewNetGrasshopper
     {
         static void Main(string[] args)
         {
+            int pointToAdd = new int();
         }
     }
 
-    public class Student
-    {
-        private Levels currentRank;
-        private int currentPoints;
-        
-        public enum Levels
-        {
-            Grasshopper,
-            Journeyman,
-            RockStar,
-            Ninja,
-            Jedi
-        }
-        public Levels level
-        {
-            get { return currentRank; }
-        }
-        
-        //Constructor for Student class
-        public Student()
-        {
-            currentRank = Levels.Grasshopper;
-        }
-    }
-
-
-
+    
 }
