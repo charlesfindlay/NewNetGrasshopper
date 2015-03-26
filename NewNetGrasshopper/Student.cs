@@ -13,6 +13,7 @@ namespace NewNetGrasshopper
         
         public enum Levels
         {
+            Beginner,
             Grasshopper,
             Journeyman,
             RockStar,
@@ -27,7 +28,7 @@ namespace NewNetGrasshopper
         //Constructor for Student class
         public Student()
         {
-            currentRank = Levels.Grasshopper;
+            currentRank = Levels.Beginner;
             currentPoints = 0;
         }
 
@@ -40,16 +41,23 @@ namespace NewNetGrasshopper
 
         private void RankChangeCheck(int points)
         {
-            if (points >= 20)
+            if (points >= 25)
                 currentRank = Levels.Jedi;
-            else if (points >= 15)
+            else if (points >= 20)
                 currentRank = Levels.Ninja;
-            else if (points >= 10)
+            else if (points >= 15)
                 currentRank = Levels.RockStar;
-            else if (points >= 5)
+            else if (points >= 10)
                 currentRank = Levels.Journeyman;
+            else if (points >= 5)
+                currentRank = Levels.Grasshopper;
         }
 
+        public void HelpfulStudent()
+        {
+            currentPoints += 10;
+            RankChangeCheck(currentPoints);
+        }
 
 
     } // Ends Student Class    
