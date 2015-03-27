@@ -9,7 +9,9 @@ namespace NewNetGrasshopper
     public class Student
     {
         private Levels currentRank;
-        private int currentPoints;
+        private int programPoints;
+        private int totalPoints;
+        private int helperPoints;
         
         public enum Levels
         {
@@ -29,34 +31,35 @@ namespace NewNetGrasshopper
         public Student()
         {
             currentRank = Levels.Beginner;
-            currentPoints = 0;
+            totalPoints = 0;
         }
 
         // Adding points due to completing programs
         public void addProgramPoints(int pointsToAdd) // pointsToAdd is user input variable on # of programs completed
         {
-            currentPoints += pointsToAdd;
-            RankChangeCheck(currentPoints);
+            programPoints += pointsToAdd;
+            RankChangeCheck();
         }
 
-        private void RankChangeCheck(int points)
+        private void RankChangeCheck()
         {
-            if (points >= 25)
+            totalPoints = programPoints + helperPoints;
+            if (totalPoints >= 25)
                 currentRank = Levels.Jedi;
-            else if (points >= 20)
+            else if (totalPoints >= 20)
                 currentRank = Levels.Ninja;
-            else if (points >= 15)
+            else if (totalPoints >= 15)
                 currentRank = Levels.RockStar;
-            else if (points >= 10)
+            else if (totalPoints >= 10)
                 currentRank = Levels.Journeyman;
-            else if (points >= 5)
+            else if (totalPoints >= 5)
                 currentRank = Levels.Grasshopper;
         }
 
         public void HelpfulStudent()
         {
-            currentPoints += 10;
-            RankChangeCheck(currentPoints);
+            helperPoints += 10;
+            RankChangeCheck();
         }
 
 

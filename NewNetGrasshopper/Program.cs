@@ -23,7 +23,7 @@ namespace NewNetGrasshopper
             
             Console.Write("Did you help a fellow student today? (y or n): ");
             string helpful = Console.ReadLine();
-            int helpfulPoints = 0;
+             int helpfulPoints = 0;
             if (helpful == "y")
             {
                 myStudent.HelpfulStudent();
@@ -37,8 +37,8 @@ namespace NewNetGrasshopper
             Console.WriteLine("For a total of {0} points today", pointToAdd + helpfulPoints);
             Console.WriteLine();            
             
-            string todayRank = myStudent.level.ToString();
-            if (todayRank == "Jedi")
+            // todayRank = myStudent.level.ToString();
+            if (myStudent.level.ToString() == "Jedi")
             {
                 Console.WriteLine("You have mastered .NET by becoming a jedi and may now know the BIG secret.");
                 Console.WriteLine("You live in the matrix, and this computer is your father.");
