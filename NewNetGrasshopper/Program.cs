@@ -12,7 +12,7 @@ namespace NewNetGrasshopper
         {
             int pointToAdd = new int();
             Student myStudent = new Student();
-
+            
             Console.WriteLine("You are a lowly Beginner .NET student.");
             Console.Write("How many programs did you write today? ");
             pointToAdd = int.Parse(Console.ReadLine());
@@ -45,12 +45,24 @@ namespace NewNetGrasshopper
             }
             else
                 Console.WriteLine("Your final rank for today is {0}", myStudent.level);
-
-            
-
-
         }
-    }
+
+        public void AddStudents()
+        {
+            string[] fNames = { "Charles", "Seth", "Jonathan", "Keonna", "Mark" };
+            var studentsNames = new List<Student>();
+            foreach (string item in fNames)
+            {
+                Student myStudent = new Student(item);
+                myStudent.name = item;
+                studentsNames.Add(myStudent); //add current student name to list
+            }
+        }
+
+
+    } // End Program Class
+
+    
 
     
 }

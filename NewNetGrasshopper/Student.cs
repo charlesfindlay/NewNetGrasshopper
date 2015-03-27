@@ -12,6 +12,7 @@ namespace NewNetGrasshopper
         private int programPoints;
         private int totalPoints;
         private int helperPoints;
+        public string name;
         
         public enum Levels
         {
