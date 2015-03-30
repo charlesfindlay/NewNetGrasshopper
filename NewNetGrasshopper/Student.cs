@@ -8,6 +8,10 @@ namespace NewNetGrasshopper
 {
     public class Student
     {
+        public Student(string name) : this()
+        {
+            this.name = name;
+        }
         private Levels currentRank;
         private int programPoints;
         private int totalPoints;

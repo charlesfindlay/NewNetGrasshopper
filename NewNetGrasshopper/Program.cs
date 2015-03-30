@@ -8,12 +8,18 @@ namespace NewNetGrasshopper
 {
     class Program
     {
+        static List<Student> studentsNames = new List<Student>();
+
         static void Main(string[] args)
         {
-            int pointToAdd = new int();
-            Student myStudent = new Student();
-            
-            Console.WriteLine("You are a lowly Beginner .NET student.");
+            int pointToAdd = new int();            
+            AddStudents();
+            string userName = Console.ReadLine();
+
+            Student myStudent = FindName(userName); //studentsNames.Find(s => s.name == userName);
+
+
+            Console.WriteLine("{0}, you are a lowly Beginner .NET student.", myStudent.name);
             Console.Write("How many programs did you write today? ");
             pointToAdd = int.Parse(Console.ReadLine());
 
@@ -47,10 +53,17 @@ namespace NewNetGrasshopper
                 Console.WriteLine("Your final rank for today is {0}", myStudent.level);
         }
 
-        public void AddStudents()
+        public static Student FindName(string name)
         {
-            string[] fNames = { "Charles", "Seth", "Jonathan", "Keonna", "Mark" };
-            var studentsNames = new List<Student>();
+            foreach (var student in studentsNames)
+                if (student.name == name)
+                    return student;
+            return null;
+        }
+
+        public static void AddStudents()
+        {
+            string[] fNames = { "Charles", "Seth", "Jonathan", "Keonna", "Mark" };            
             foreach (string item in fNames)
             {
                 Student myStudent = new Student(item);
